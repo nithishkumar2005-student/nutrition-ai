@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Hill Calories AI</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body class="bg-slate-100 flex flex-col items-center p-10">
+
+<h1 class="text-3xl font-bold mb-6">Analyze Your Meal</h1>
+
+<input type="file" id="fileInput" hidden />
+<button id="uploadBtn" class="bg-green-600 text-white px-6 py-3 rounded-lg mb-6">
+Upload Food Image
+</button>
+
+<!-- RESULT CARD -->
+<div class="bg-white shadow-lg rounded-xl p-6 w-[600px]">
+
+<h2 class="text-xl font-bold mb-4">Meal Analysis</h2>
+
+<div class="grid grid-cols-2 gap-4 mb-4">
+<div>Total Calories: <b id="calories">0</b></div>
+<div>Health Score: <b id="score">0</b></div>
+<div>Protein: <b id="protein">0</b></div>
+<div>Carbs: <b id="carbs">0</b></div>
+<div>Fat: <b id="fat">0</b></div>
+</div>
+
+<canvas id="chart"></canvas>
+
+<div class="mt-4">
+<h3 class="font-bold">Detected Items</h3>
+<ul id="items" class="list-disc pl-5"></ul>
+</div>
+
+<p id="insight" class="mt-4 text-blue-600 font-medium"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
