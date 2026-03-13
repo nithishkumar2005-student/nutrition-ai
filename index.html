@@ -2,46 +2,119 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Hill Calories AI</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+<style>
+
+/* Smooth animations */
+
+.fade-up{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* glass UI */
+
+.glass{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+/* glow button */
+
+.glow:hover{
+box-shadow:0 0 20px #00ffa6;
+}
+
+</style>
 
 </head>
 
-<body class="bg-slate-100 flex flex-col items-center p-10">
+<body class="bg-[#0b1f1a] text-white overflow-x-hidden">
 
-<h1 class="text-3xl font-bold mb-6">Analyze Your Meal</h1>
+<!-- NAVBAR -->
+<nav class="fixed w-full z-50 bg-[#0b1f1a]/70 backdrop-blur-md border-b border-white/10">
+<div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
 
-<input type="file" id="fileInput" hidden />
-<button id="uploadBtn" class="bg-green-600 text-white px-6 py-3 rounded-lg mb-6">
-Upload Food Image
+<h1 class="font-bold text-xl text-green-400">Hill Calories AI</h1>
+
+<div class="flex gap-6 items-center">
+<a href="https://www.linkedin.com/in/pnithishkumar2005/" target="_blank" class="hover:text-green-400">LinkedIn</a>
+<a href="mailto:nitishkumar83411@gmail.com" class="hover:text-green-400">Gmail</a>
+<button id="uploadBtn" class="bg-green-500 px-4 py-2 rounded-lg glow">Start</button>
+</div>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="min-h-screen flex items-center px-6">
+
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+
+<div class="fade-up">
+<h1 class="text-6xl font-black leading-tight">
+Know Your <span class="text-green-400">Nutrients</span> Instantly
+</h1>
+
+<p class="text-gray-300 mt-6 text-lg">
+Upload your food image and get instant AI-powered nutrition breakdown.
+</p>
+
+<input type="file" id="fileInput" hidden>
+
+<button class="mt-6 bg-green-500 px-8 py-4 rounded-xl text-lg glow"
+onclick="uploadBtn.click()">
+Analyze Your Meal →
 </button>
 
-<!-- RESULT CARD -->
-<div class="bg-white shadow-lg rounded-xl p-6 w-[600px]">
+</div>
 
-<h2 class="text-xl font-bold mb-4">Meal Analysis</h2>
+<!-- 3D SCENE -->
+<div class="fade-up">
+<canvas id="threeCanvas"></canvas>
+</div>
 
-<div class="grid grid-cols-2 gap-4 mb-4">
+</div>
+</section>
+
+<!-- RESULT SECTION -->
+<section class="px-6 pb-20 fade-up">
+
+<div class="max-w-4xl mx-auto glass rounded-xl p-8">
+
+<h2 class="text-2xl font-bold mb-6">Meal Analysis</h2>
+
+<div class="grid grid-cols-2 gap-6 mb-6">
+
 <div>Total Calories: <b id="calories">0</b></div>
 <div>Health Score: <b id="score">0</b></div>
 <div>Protein: <b id="protein">0</b></div>
 <div>Carbs: <b id="carbs">0</b></div>
 <div>Fat: <b id="fat">0</b></div>
+
 </div>
 
 <canvas id="chart"></canvas>
 
-<div class="mt-4">
-<h3 class="font-bold">Detected Items</h3>
-<ul id="items" class="list-disc pl-5"></ul>
-</div>
+<ul id="items" class="mt-6 list-disc pl-6"></ul>
 
-<p id="insight" class="mt-4 text-blue-600 font-medium"></p>
+<p id="insight" class="mt-4 text-green-300"></p>
 
 </div>
+
+</section>
 
 <script src="script.js"></script>
 
