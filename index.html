@@ -1,122 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Hill Calories AI</title>
+<!-- HOW IT WORKS -->
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<section class="py-24 bg-white">
 
-<style>
+<div class="max-w-6xl mx-auto px-6 text-center">
 
-/* Smooth animations */
+<h2 class="text-4xl font-bold text-gray-900 mb-3">
+How It Works
+</h2>
 
-.fade-up{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
-}
-.fade-up.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* glass UI */
-
-.glass{
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.1);
-}
-
-/* glow button */
-
-.glow:hover{
-box-shadow:0 0 20px #00ffa6;
-}
-
-</style>
-
-</head>
-
-<body class="bg-[#0b1f1a] text-white overflow-x-hidden">
-
-<!-- NAVBAR -->
-<nav class="fixed w-full z-50 bg-[#0b1f1a]/70 backdrop-blur-md border-b border-white/10">
-<div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-
-<h1 class="font-bold text-xl text-green-400">Hill Calories AI</h1>
-
-<div class="flex gap-6 items-center">
-<a href="https://www.linkedin.com/in/pnithishkumar2005/" target="_blank" class="hover:text-green-400">LinkedIn</a>
-<a href="mailto:nitishkumar83411@gmail.com" class="hover:text-green-400">Gmail</a>
-<button id="uploadBtn" class="bg-green-500 px-4 py-2 rounded-lg glow">Start</button>
-</div>
-
-</div>
-</nav>
-
-<!-- HERO -->
-<section class="min-h-screen flex items-center px-6">
-
-<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
-
-<div class="fade-up">
-<h1 class="text-6xl font-black leading-tight">
-Know Your <span class="text-green-400">Nutrients</span> Instantly
-</h1>
-
-<p class="text-gray-300 mt-6 text-lg">
-Upload your food image and get instant AI-powered nutrition breakdown.
+<p class="text-gray-500 mb-14">
+Three simple steps to unlock your nutrition insights
 </p>
 
-<input type="file" id="fileInput" hidden>
+<div class="grid md:grid-cols-3 gap-8">
 
-<button class="mt-6 bg-green-500 px-8 py-4 rounded-xl text-lg glow"
-onclick="uploadBtn.click()">
-Analyze Your Meal →
-</button>
+<!-- CARD 1 -->
+<div class="bg-white border rounded-xl p-8 shadow-sm relative">
+
+<div class="absolute -top-4 left-6 bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">1</div>
+
+<div class="bg-blue-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
+📷
+</div>
+
+<h3 class="font-semibold text-lg mb-2">Upload Photo</h3>
+
+<p class="text-gray-500 text-sm">
+Upload or capture a meal photo from your device.
+Supports JPG, PNG and WEBP formats.
+</p>
 
 </div>
 
-<!-- 3D SCENE -->
-<div class="fade-up">
-<canvas id="threeCanvas"></canvas>
+<!-- CARD 2 -->
+<div class="bg-white border rounded-xl p-8 shadow-sm relative">
+
+<div class="absolute -top-4 left-6 bg-purple-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">2</div>
+
+<div class="bg-purple-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
+⚡
+</div>
+
+<h3 class="font-semibold text-lg mb-2">AI Analysis</h3>
+
+<p class="text-gray-500 text-sm">
+Our AI detects food items, portions and calculates
+nutrition values with precision.
+</p>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="bg-white border rounded-xl p-8 shadow-sm relative">
+
+<div class="absolute -top-4 left-6 bg-green-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">3</div>
+
+<div class="bg-green-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
+📊
+</div>
+
+<h3 class="font-semibold text-lg mb-2">Get Results</h3>
+
+<p class="text-gray-500 text-sm">
+Receive calories, macros and full nutrition
+breakdown instantly.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- WHY HILL CALORIES -->
+
+<section class="py-24 bg-gray-50">
+
+<div class="max-w-6xl mx-auto px-6 text-center">
+
+<h2 class="text-4xl font-bold text-gray-900 mb-3">
+Why Hill Calories?
+</h2>
+
+<p class="text-gray-500 mb-14">
+Lightning-fast, accurate, and built with privacy at its core
+</p>
+
+<div class="grid md:grid-cols-3 gap-8 mb-12">
+
+<div class="bg-white border rounded-xl p-8 shadow-sm">
+<div class="bg-green-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">📸</div>
+<h3 class="font-semibold mb-2">Instant Results</h3>
+<p class="text-gray-500 text-sm">Get analysis in under 3 seconds.</p>
+</div>
+
+<div class="bg-white border rounded-xl p-8 shadow-sm">
+<div class="bg-orange-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">📈</div>
+<h3 class="font-semibold mb-2">High Accuracy</h3>
+<p class="text-gray-500 text-sm">90%+ accuracy powered by AI.</p>
+</div>
+
+<div class="bg-white border rounded-xl p-8 shadow-sm">
+<div class="bg-blue-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">🔒</div>
+<h3 class="font-semibold mb-2">Privacy First</h3>
+<p class="text-gray-500 text-sm">Images are never stored permanently.</p>
+</div>
+
+</div>
+
+
+<!-- STATS BAR -->
+
+<div class="bg-green-50 border rounded-xl py-10 grid md:grid-cols-3">
+
+<div>
+<h3 class="text-3xl font-bold text-green-600">92%</h3>
+<p class="text-gray-500 text-sm">Accuracy Rate</p>
+</div>
+
+<div>
+<h3 class="text-3xl font-bold text-orange-500">3s</h3>
+<p class="text-gray-500 text-sm">Analysis Time</p>
+</div>
+
+<div>
+<h3 class="text-3xl font-bold text-blue-600">100%</h3>
+<p class="text-gray-500 text-sm">Secure</p>
+</div>
+
 </div>
 
 </div>
 </section>
-
-<!-- RESULT SECTION -->
-<section class="px-6 pb-20 fade-up">
-
-<div class="max-w-4xl mx-auto glass rounded-xl p-8">
-
-<h2 class="text-2xl font-bold mb-6">Meal Analysis</h2>
-
-<div class="grid grid-cols-2 gap-6 mb-6">
-
-<div>Total Calories: <b id="calories">0</b></div>
-<div>Health Score: <b id="score">0</b></div>
-<div>Protein: <b id="protein">0</b></div>
-<div>Carbs: <b id="carbs">0</b></div>
-<div>Fat: <b id="fat">0</b></div>
-
-</div>
-
-<canvas id="chart"></canvas>
-
-<ul id="items" class="mt-6 list-disc pl-6"></ul>
-
-<p id="insight" class="mt-4 text-green-300"></p>
-
-</div>
-
-</section>
-
-<script src="script.js"></script>
-
-</body>
-</html>
