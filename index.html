@@ -1,136 +1,113 @@
-<!-- HOW IT WORKS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Hill Calories AI</title>
 
-<section class="py-24 bg-white">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<div class="max-w-6xl mx-auto px-6 text-center">
+<style>
 
-<h2 class="text-4xl font-bold text-gray-900 mb-3">
-How It Works
-</h2>
+body{
+background:linear-gradient(180deg,#071a16,#02110e);
+font-family:Inter,sans-serif;
+}
 
-<p class="text-gray-500 mb-14">
-Three simple steps to unlock your nutrition insights
+.glass{
+background:rgba(255,255,255,.03);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.08);
+}
+
+.glow:hover{
+box-shadow:0 0 20px rgba(13,242,166,.5);
+}
+
+</style>
+
+</head>
+
+<body class="text-white">
+
+<!-- NAVBAR -->
+
+<nav class="flex justify-between items-center px-10 py-6">
+
+<h1 class="font-bold text-lg">Hill Calories AI</h1>
+
+<div class="flex gap-6 items-center text-sm text-gray-300">
+<a href="https://www.linkedin.com/in/pnithishkumar2005/">LinkedIn</a>
+<a href="mailto:nitishkumar83411@gmail.com">Gmail</a>
+<button id="uploadBtn" class="bg-[#0df2a6] text-black px-4 py-2 rounded-lg glow">Analyze Meal</button>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 px-10 py-20">
+
+<div>
+
+<h1 class="text-6xl font-black leading-tight mb-6">
+Know Your <span class="text-[#0df2a6]">Nutrients</span> Instantly
+</h1>
+
+<p class="text-gray-400 mb-8">
+Upload food image and get calories + macros instantly using AI.
 </p>
 
-<div class="grid md:grid-cols-3 gap-8">
+<button onclick="uploadBtn.click()" class="bg-[#0df2a6] text-black px-7 py-4 rounded-xl font-bold glow">
+Start Analyzing →
+</button>
 
-<!-- CARD 1 -->
-<div class="bg-white border rounded-xl p-8 shadow-sm relative">
-
-<div class="absolute -top-4 left-6 bg-blue-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">1</div>
-
-<div class="bg-blue-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
-📷
-</div>
-
-<h3 class="font-semibold text-lg mb-2">Upload Photo</h3>
-
-<p class="text-gray-500 text-sm">
-Upload or capture a meal photo from your device.
-Supports JPG, PNG and WEBP formats.
-</p>
+<input type="file" id="fileInput" hidden>
 
 </div>
 
-<!-- CARD 2 -->
-<div class="bg-white border rounded-xl p-8 shadow-sm relative">
+<div class="glass rounded-2xl p-4">
 
-<div class="absolute -top-4 left-6 bg-purple-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">2</div>
-
-<div class="bg-purple-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
-⚡
-</div>
-
-<h3 class="font-semibold text-lg mb-2">AI Analysis</h3>
-
-<p class="text-gray-500 text-sm">
-Our AI detects food items, portions and calculates
-nutrition values with precision.
-</p>
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c"
+class="rounded-xl"/>
 
 </div>
 
-<!-- CARD 3 -->
-<div class="bg-white border rounded-xl p-8 shadow-sm relative">
-
-<div class="absolute -top-4 left-6 bg-green-500 text-white w-8 h-8 flex items-center justify-center rounded-full font-bold">3</div>
-
-<div class="bg-green-100 w-14 h-14 flex items-center justify-center rounded-lg mb-5">
-📊
-</div>
-
-<h3 class="font-semibold text-lg mb-2">Get Results</h3>
-
-<p class="text-gray-500 text-sm">
-Receive calories, macros and full nutrition
-breakdown instantly.
-</p>
-
-</div>
-
-</div>
-</div>
 </section>
 
 
+<!-- RESULT SECTION -->
 
-<!-- WHY HILL CALORIES -->
+<section class="max-w-4xl mx-auto px-10 pb-20">
 
-<section class="py-24 bg-gray-50">
+<div class="glass rounded-xl p-8">
 
-<div class="max-w-6xl mx-auto px-6 text-center">
+<h2 class="text-2xl font-bold mb-6">Meal Analysis</h2>
 
-<h2 class="text-4xl font-bold text-gray-900 mb-3">
-Why Hill Calories?
-</h2>
+<div class="grid grid-cols-2 gap-4 mb-6">
 
-<p class="text-gray-500 mb-14">
-Lightning-fast, accurate, and built with privacy at its core
-</p>
-
-<div class="grid md:grid-cols-3 gap-8 mb-12">
-
-<div class="bg-white border rounded-xl p-8 shadow-sm">
-<div class="bg-green-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">📸</div>
-<h3 class="font-semibold mb-2">Instant Results</h3>
-<p class="text-gray-500 text-sm">Get analysis in under 3 seconds.</p>
-</div>
-
-<div class="bg-white border rounded-xl p-8 shadow-sm">
-<div class="bg-orange-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">📈</div>
-<h3 class="font-semibold mb-2">High Accuracy</h3>
-<p class="text-gray-500 text-sm">90%+ accuracy powered by AI.</p>
-</div>
-
-<div class="bg-white border rounded-xl p-8 shadow-sm">
-<div class="bg-blue-100 w-12 h-12 flex items-center justify-center rounded-lg mb-4">🔒</div>
-<h3 class="font-semibold mb-2">Privacy First</h3>
-<p class="text-gray-500 text-sm">Images are never stored permanently.</p>
-</div>
+<div>Total Calories: <b id="calories">0</b></div>
+<div>Health Score: <b id="score">0</b></div>
+<div>Protein: <b id="protein">0</b></div>
+<div>Carbs: <b id="carbs">0</b></div>
+<div>Fat: <b id="fat">0</b></div>
 
 </div>
 
+<canvas id="chart"></canvas>
 
-<!-- STATS BAR -->
+<ul id="items" class="mt-6 list-disc pl-6"></ul>
 
-<div class="bg-green-50 border rounded-xl py-10 grid md:grid-cols-3">
-
-<div>
-<h3 class="text-3xl font-bold text-green-600">92%</h3>
-<p class="text-gray-500 text-sm">Accuracy Rate</p>
-</div>
-
-<div>
-<h3 class="text-3xl font-bold text-orange-500">3s</h3>
-<p class="text-gray-500 text-sm">Analysis Time</p>
-</div>
-
-<div>
-<h3 class="text-3xl font-bold text-blue-600">100%</h3>
-<p class="text-gray-500 text-sm">Secure</p>
-</div>
+<p id="insight" class="mt-4 text-green-300"></p>
 
 </div>
 
-</div>
 </section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

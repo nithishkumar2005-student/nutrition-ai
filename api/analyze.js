@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-export default async function handler(req, res) {
+export default async function handler(req,res){
 
 try{
 
@@ -31,10 +31,7 @@ insight:""
 const result=await model.generateContent([
 prompt,
 {
-inlineData:{
-mimeType:"image/jpeg",
-data:imageBase64
-}
+inlineData:{mimeType:"image/jpeg",data:imageBase64}
 }
 ]);
 
@@ -42,8 +39,8 @@ const text=result.response.text();
 
 res.status(200).json(JSON.parse(text));
 
-}catch(err){
-console.log(err);
+}catch(e){
+console.log(e);
 res.status(500).json({error:"AI failed"});
 }
 
